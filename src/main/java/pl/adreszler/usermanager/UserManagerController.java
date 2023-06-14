@@ -1,9 +1,7 @@
 package pl.adreszler.usermanager;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 class UserManagerController {
@@ -26,10 +24,10 @@ class UserManagerController {
         return builder.toString();
     }
 
-    @GetMapping("/add")
-    String addUser(@RequestParam(required = false, name = "imie") String firstName,
-                   @RequestParam(required = false, name = "nazwisko") String lastName,
-                   @RequestParam(required = false, name = "wiek") int age) {
+    @RequestMapping("/add")
+    String addUser(@RequestParam(required = false) String firstName,
+                   @RequestParam(required = false) String lastName,
+                   @RequestParam(required = false) int age) {
         if (firstName == null || firstName.equals("")) {
             return "redirect:/err.html";
         }
