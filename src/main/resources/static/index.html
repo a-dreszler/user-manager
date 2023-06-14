@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>User manager homepage</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form action="/add" method="post">
+            <h1>User Manager</h1>
+            <div>
+                <label for="first-name">First name</label>
+                <input name="firstName" type="text" id="first-name" required>
+            </div>
+            <div>
+                <label for="last-name">Last Name</label>
+                <input name="lastName" type="text" id="last-name">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input name="age" type="number" min="1" max="120" id="age">
+            </div>
+            <button type="submit">Add user</button>
+        </form>
+    </body>
+</html>
